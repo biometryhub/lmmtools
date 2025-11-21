@@ -11,7 +11,7 @@ genherit1.asreml <- function(asr, id = 'Genotype', only = NULL, Gmat = NULL, ...
         only <- id
     }
     if(packageVersion("asreml") == "3.0") {
-        mypred <- asreml::predict.asreml(asr, classify=id, maxiter=1, only=only, vcov=TRUE, ...)$predictions
+        mypred <- asreml::predict.asreml(asr, classify=id, maxiter=1, only=only, vcov=TRUE, ...)
         which.vc <- grep(id, names(asr$gammas))
     } else {
         mypred <- asreml::predict.asreml(asr, classify=id, maxit=1, only=only, vcov=TRUE, ...)
